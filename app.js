@@ -2,7 +2,7 @@
 
 const express = require('express');
 const bodyparser = require('body-parser');
-const port = process.env.PORT || 8000;
+//const port = process.env.PORT || 8000;
 const ejs = require('ejs');
 const date = require(__dirname+"/date.js");
 const daygen = require(__dirname+"/day.js");
@@ -161,7 +161,11 @@ else {
 });
 
 
-
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8000;
+}
+app.listen(port);
 
 app.listen(port,function () {
   console.log("server running successfully");
