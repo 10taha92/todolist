@@ -8,7 +8,6 @@ const date = require(__dirname+"/date.js");
 const daygen = require(__dirname+"/day.js");
 const _ = require('lodash');
 const https = require('https');
-const port = process.env.port || 3000;
 
 const app = express();
 app.use(bodyparser.urlencoded({extended: true}));
@@ -165,7 +164,7 @@ else {
 
 
 app.listen(port,function () {
-  console.log("server running successfully at port "+ port);
+  console.log("server running successfully");
 });
 
 
